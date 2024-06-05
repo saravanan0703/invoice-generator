@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { Alert, Button, Card, Form } from "react-bootstrap";
+import { Alert, Button, Card, Container, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { supabase } from "../supabase/client";
 
@@ -90,10 +90,11 @@ const Register = () => {
               </Form>
             </Card.Body>
           </Card>
+          <div className="w-100 text-center mt-2">
+            Already a User? <Link to={"/login"}>Login</Link>
+          </div>  
         </div>
-        <div className="w-100 text-center mt-2">
-          Already a User? <Link to={"/login"}>Login</Link>
-        </div>  
+          
       </Container>
     </>
   );
