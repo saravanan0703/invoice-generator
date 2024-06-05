@@ -50,46 +50,51 @@ const Register = () => {
 
   return (
     <>
-      <Card>
-        <Card.Body>
-          <h2 className="text-center mb-4">Register</h2>
-          <Form onSubmit={handleSubmit}>
-            <Form.Group id="email">
-              <Form.Label>Email</Form.Label>
-              <Form.Control type="email" ref={emailRef} required />
-            </Form.Group>
-            <Form.Group id="password">
-              <Form.Label>Password</Form.Label>
-              <Form.Control type="password" ref={passwordRef} required />
-            </Form.Group>
-            <Form.Group id="confirm-password">
-              <Form.Label>Confirm Password</Form.Label>
-              <Form.Control type="password" ref={confirmPasswordRef} required />
-            </Form.Group>
-            {errorMsg && (
-              <Alert
-                variant="danger"
-                onClose={() => setErrorMsg("")}
-                dismissible>
-                {errorMsg}
-              </Alert>
-            )}
-            {msg && (
-              <Alert variant="success" onClose={() => setMsg("")} dismissible>
-                {msg}
-              </Alert>
-            )}
-            <div className="text-center mt-2">
-              <Button disabled={loading} type="submit" className="w-50">
-                Register
-              </Button>
-            </div>
-          </Form>
-        </Card.Body>
-      </Card>
-      <div className="w-100 text-center mt-2">
-        Already a User? <Link to={"/login"}>Login</Link>
-      </div>
+      <Container className="d-flex align-items-center justify-content-center"
+        style={{ minHeight: "100vh" }}>
+        <div className="w-100" style={{ maxWidth: "400px" }}>
+          <Card>
+            <Card.Body>
+              <h2 className="text-center mb-4">Register</h2>
+              <Form onSubmit={handleSubmit}>
+                <Form.Group id="email">
+                  <Form.Label>Email</Form.Label>
+                  <Form.Control type="email" ref={emailRef} required />
+                </Form.Group>
+                <Form.Group id="password">
+                  <Form.Label>Password</Form.Label>
+                  <Form.Control type="password" ref={passwordRef} required />
+                </Form.Group>
+                <Form.Group id="confirm-password">
+                  <Form.Label>Confirm Password</Form.Label>
+                  <Form.Control type="password" ref={confirmPasswordRef} required />
+                </Form.Group>
+                {errorMsg && (
+                  <Alert
+                    variant="danger"
+                    onClose={() => setErrorMsg("")}
+                    dismissible>
+                    {errorMsg}
+                  </Alert>
+                )}
+                {msg && (
+                  <Alert variant="success" onClose={() => setMsg("")} dismissible>
+                    {msg}
+                  </Alert>
+                )}
+                <div className="text-center mt-2">
+                  <Button disabled={loading} type="submit" className="w-50">
+                    Register
+                  </Button>
+                </div>
+              </Form>
+            </Card.Body>
+          </Card>
+        </div>
+        <div className="w-100 text-center mt-2">
+          Already a User? <Link to={"/login"}>Login</Link>
+        </div>  
+      </Container>
     </>
   );
 };

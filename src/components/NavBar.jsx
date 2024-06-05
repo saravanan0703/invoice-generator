@@ -21,7 +21,7 @@ const NavBar = () => {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-        <Navbar.Brand>UserAuth</Navbar.Brand>
+        <Navbar.Brand>Peak Wood Packers</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
@@ -36,8 +36,8 @@ const NavBar = () => {
               </Nav.Link>
             )}
             {auth && (
-              <Nav.Link as={Link} to="/">
-                Home
+              <Nav.Link as={Link} to="/invoice">
+                Invoice
               </Nav.Link>
             )}
           </Nav>
